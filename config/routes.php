@@ -1,6 +1,6 @@
 <?php
 $routes = [
     '/home' => function () {
-        echo '<h1>Home</h1>';
+        include_once __DIR__ . '/../views/pages/home.php'; 
     }
 ];
