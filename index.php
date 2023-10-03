@@ -1,8 +1,12 @@
 <?php 
-require_once __DIR__ . '/vendor/autoload.php';
+define('APP_PATH', __DIR__);
 
-require_once __DIR__ . '/config/routes.php';
+// autoloader is needed for booting files from vendor and using namespaces
+// as it points to root folder App
+require_once APP_PATH . '/vendor/autoload.php';
 
-$uri = $_SERVER['REQUEST_URI'];
+use App\App;
 
-$routes[$uri]();
+$app = new App();
+
+$app->run();
