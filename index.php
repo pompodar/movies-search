@@ -5,7 +5,7 @@ define('APP_PATH', __DIR__);
 // as it points to root folder App
 require_once APP_PATH . '/vendor/autoload.php';
 
-use App\App;
+use App\Kernel\App;
 
 $app = new App();
 
