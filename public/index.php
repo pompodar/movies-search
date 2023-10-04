@@ -1,5 +1,5 @@
 <?php 
-define('APP_PATH', __DIR__);
+define('APP_PATH', dirname(__DIR__));
 
 // Autoloader is needed for booting files from vendor and using namespaces
 // as it points to root folder App
