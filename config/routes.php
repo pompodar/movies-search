@@ -1,9 +1,8 @@
 <?php
+use App\Route\Route;
+
 return [
-    '/home' => function () {
+    Route::get('/home', function () {
         include_once APP_PATH . '/views/pages/home.php'; 
-    },
-    '/home' => function () {
-        include_once APP_PATH . '/views/pages/home.php'; 
-    }
+    }),
 ];
