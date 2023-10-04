@@ -1,8 +1,8 @@
 <?php
 use App\Route\Route;
+use App\Controllers\HomeController;
 
 return [
-    Route::get('/home', function () {
-        include_once APP_PATH . '/views/pages/home.php'; 
-    }),
+    // :: is not static signature, no explanation for this
+    Route::get('/home', [HomeController::class, 'index']),
 ];

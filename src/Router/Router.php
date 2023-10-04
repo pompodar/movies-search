@@ -16,9 +16,18 @@ class Router {
 
         if(!$route) {
             $this->notFound();
-        }        
+        }     
+        
+        if(is_array($route->getAction())) {
+            [$controller, $action] = $route->getAction();
 
-        $route->getAction()();
+            $controller = new $controller();
+
+            // No explanation why we need to use this function
+            call_user_func([$controller, $action]);
+        } else {
+            call_user_func($route->getAction());
+        }
     } 
 
     private function notFound(): void {
