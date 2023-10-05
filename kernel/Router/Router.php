@@ -1,14 +1,21 @@
 <?php
 namespace App\Kernel\Router;
 
+use App\Kernel\Controller\Controller;
+use App\Kernel\View\View;
+
 class Router {
     private array $routes = [
         'GET' => [],
         'POST' => [],
     ];
 
-    public function __construct() {
+    private View $view;
+
+    public function __construct($view) {
         $this->initRoutes();
+
+        $this->view = $view;
     }
     
     public function dispatch(string $uri, $method): void {
@@ -24,6 +31,8 @@ class Router {
             $controller = new $controller();
 
             // No explanation why we need to use this function
+            call_user_func([$controller, 'setView'], $this->view);
+
             call_user_func([$controller, $action]);
         } else {
             call_user_func($route->getAction());
