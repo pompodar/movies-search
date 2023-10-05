@@ -1,5 +1,5 @@
 <?php
-namespace App\Kernel\Route;
+namespace App\Kernel\HTTP\Route;
 
 class Route {
     private string $uri;

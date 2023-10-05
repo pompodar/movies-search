@@ -1,5 +1,5 @@
 <?php
-namespace App\Kernel\Request;
+namespace App\Kernel\HTTP\Request;
 
 class Request {
     private array $get;
